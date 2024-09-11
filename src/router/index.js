@@ -1,19 +1,51 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Login from '../views/loginDemo/index.vue'
+// import HomeView from '../views/HomeView.vue'
 
 const routes = [
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: HomeView
+  // },
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/login' // 添加重定向规则，将根路径重定向到 /login
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/index',
+    name: 'home',
+    component: () => import('../views/homeDemo/index.vue')
+  },
+  {
+    path: '/fuzi',
+    name: 'fuzi',
+    component: () => import('../views/fuzi/index.vue')
+  },
+  {
+    path: '/textDemo',
+    name: 'textDemo',
+    component: () => import('../views/textDemo.vue')
+  },
+  {
+    path: '/chess',
+    name: 'chessDemo',
+    component: () => import('../views/chessDemo/index.vue')
+  },
+  {
+    path: '/chess01',
+    name: 'chess01',
+    component: () => import('../views/chess01/index.vue')
+  },
+  {
+    path: '/chess02',
+    name: 'chess02',
+    component: () => import('../views/chess02/index.vue')
   }
 ]
 
