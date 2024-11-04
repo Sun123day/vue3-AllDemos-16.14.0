@@ -46,7 +46,12 @@ const routes = [
     path: '/chess02',
     name: 'chess02',
     component: () => import('../views/chess02/index.vue')
-  }
+  },
+  {
+    path: '/naiveTree01',
+    name: 'naiveTree01',
+    component: () => import('../views/naiveTree01/index.vue')
+  },
 ]
 
 const router = createRouter({
