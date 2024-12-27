@@ -52,6 +52,16 @@ const routes = [
     name: 'naiveTree01',
     component: () => import('../views/naiveTree01/index.vue')
   },
+  {
+    path: '/naiveUpLoadImage',
+    name: 'naiveUpLoadImage',
+    component: () => import('../views/naiveUpLoadImage/index.vue')
+  },
+  {
+    path: '/naiveSelect',
+    name: 'naiveSelect',
+    component: () => import('../views/naiveSelect/index.vue')
+  },
 ]
 
 const router = createRouter({

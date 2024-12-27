@@ -36,6 +36,9 @@
         <div style="margin-right: 16px;">
           合并后的有效节点：{{ validSecondTreeKeys }}
         </div>
+        <div style="margin-right: 16px;">
+          最终勾选的有效节点：{{ finalCheckedKeys }}
+        </div>
       </div>
     </div>
     
@@ -54,9 +57,10 @@ export default defineComponent({
     setup() {
         // 将引入的属性节点赋值给treeDataList
         const treeDataList = ref(treeData)
+        console.log("treeDataList", treeDataList);
 
         // 所有叶子节点
-        // const leafKeys = ref([])
+        const leafKeys = ref([])
 
         // 主动勾选的节点
         const checkedKeys = ref([])
@@ -73,12 +77,16 @@ export default defineComponent({
         // 将checkedSecondKeys和checkedSingleSecondTreeKeys合并
         const validSecondTreeKeys = ref([])
 
+        // 最终勾选节点：
+        const finalCheckedKeys = ref([])
+
         // 拿到第一层节点
         const getFirstLevelKeys = (treeData) => {
             return treeData.map(item => item.key);
         }
         
         firstLevelKeys.value = getFirstLevelKeys(treeDataList.value)
+        console.log("第一层节点firstLevelKeys", firstLevelKeys.value);
 
         // 拿到第二层节点
         const getSecondLevelKeys = (firstLevel, treeData) => {
@@ -166,6 +174,9 @@ export default defineComponent({
 
             // 合并后剔除重复节点
             validSecondTreeKeys.value = getMergeSecondTreeKeys(checkedSecondKeys.value, checkedSingleSecondTreeKeys.value)
+
+            // 最终勾选节点：
+            finalCheckedKeys.value = [...checkedKeys.value,...validSecondTreeKeys.value]
         }
         return {
             treeDataList,
@@ -175,6 +186,7 @@ export default defineComponent({
             checkedSecondKeys,
             singleTrees,
             validSecondTreeKeys,
+            finalCheckedKeys,
             checkedOnChange,
             getFirstLevelKeys,
             getSecondLevelKeys,
