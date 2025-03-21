@@ -30,9 +30,12 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import axios from 'axios';
 // import naive from 'naive-ui'
+// Naivve UI 只能按需引入，然后全局挂载
 import 'vfonts/Lato.css'
 import 'vfonts/FiraCode.css'
 
+// 引入Naive UI
+import { useNaiveComponents } from '@/plugins/setNaiveUI'
 
 // main.js:注册所有图标
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
@@ -46,7 +49,9 @@ createApp(App).use(ElementPlus).use(store).use(router).mount('#app')
 app.use(router);
 app.use(store);
 app.use(ElementPlus);
+// Naivve UI 只能按需引入，然后全局挂载
 // app.use(naive)
+useNaiveComponents(app)
 app.config.globalProperties.$axios = axios;
 
 app.mount('#app'); // 挂载应用程序

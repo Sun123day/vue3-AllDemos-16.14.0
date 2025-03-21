@@ -1,4 +1,5 @@
 <template>
+  <h1>原本示例</h1>
   <n-upload
     action="https://www.mocky.io/v2/5e4bafc63100007100d8b70f"
     :default-file-list="fileList"

@@ -1,6 +1,12 @@
 <template>
-  <router-view/>
+    <AppProvider>
+        <router-view />
+    </AppProvider>
 </template>
+
+<script setup>
+import AppProvider from '@/baseComponents/AppProvider'
+</script>
 
 <style lang="scss">
 #app {

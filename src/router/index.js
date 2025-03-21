@@ -53,14 +53,24 @@ const routes = [
     component: () => import('../views/naiveTree01/index.vue')
   },
   {
-    path: '/naiveUpLoadImage',
-    name: 'naiveUpLoadImage',
-    component: () => import('../views/naiveUpLoadImage/index.vue')
+    path: '/naiveUpLoadImage01',
+    name: 'naiveUpLoadImage01',
+    component: () => import('../views/naiveUpLoadImage01/index.vue')
+  },
+  {
+    path: '/naiveUpLoadImage02',
+    name: 'naiveUpLoadImage02',
+    component: () => import('../views/naiveUpLoadImage02/index.vue')
   },
   {
     path: '/naiveSelect',
     name: 'naiveSelect',
     component: () => import('../views/naiveSelect/index.vue')
+  },
+  {
+    path: '/naivePDFUploadView',
+    name: 'naivePDFUploadViewPDF上传和预览',
+    component: () => import('../views/naivePDFUploadView/index.vue')
   },
 ]
 
