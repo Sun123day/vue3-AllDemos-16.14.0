@@ -72,6 +72,16 @@ const routes = [
     name: 'naivePDFUploadViewPDF上传和预览',
     component: () => import('../views/naivePDFUploadView/index.vue')
   },
+  {
+    path: '/tuozhuai',
+    name: 'tuozhuai拖拽',
+    component: () => import('../views/tuozhuai/index.vue')
+  },
+  {
+    path: '/tuozhuaiCard',
+    name: 'tuozhuaiCard拖拽卡片',
+    component: () => import('../views/tuozhuaiCard/index.vue')
+  },
 ]
 
 const router = createRouter({

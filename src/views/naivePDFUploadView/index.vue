@@ -17,15 +17,15 @@
           </n-grid>
         </n-form>
     </div>
-    <div class="table">
+    <!-- <div class="table">
         <n-data-table
           :bordered="false"
           :single-line="false"
           :columns="columns"
           :data="tableData"
         />
-    </div>
-    <!-- <iframe :src="iframeUrl" style="position:absolute;"></iframe> -->
+    </div> -->
+    <iframe :src="iframeUrl" style="height: 500px; width: 1200px;"></iframe>
   </div>
 </template>
 <script>
@@ -68,12 +68,14 @@ export default defineComponent({
         }
         // 表格数据
         const tableData = ref([])
-        const iframeUrl = ref("");
+        // const iframeUrl = ref("");
+        const iframeUrl = "http://47.107.101.31:9000/domain/2025/4/21/16/50/%E9%9B%AA%E8%8A%B1%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=Lz8k4NhpwJLDe4z13bzx%2F20250421%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250421T085059Z&X-Amz-Expires=500000&X-Amz-SignedHeaders=host&X-Amz-Signature=38cd35123c1aace45bf8d56588542cf2e1b26034d093dd0d309b0cb9ebff73ba"
         const previewPDF = (row) => {
             // 实现预览PDF的逻辑
             // console.log('预览PDF', row);
-            const blob = new Blob([row],{type: 'application/pdf'});
-            iframeUrl.value = window.URL.createObjectURL(blob);
+            // const blob = new Blob([row],{type: 'application/pdf'});
+            // iframeUrl.value = window.URL.createObjectURL(blob);
+            // iframeUrl.value = "http://47.107.101.31:9000/domain/2025/4/21/16/50/%E9%9B%AA%E8%8A%B1%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=Lz8k4NhpwJLDe4z13bzx%2F20250421%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250421T085059Z&X-Amz-Expires=500000&X-Amz-SignedHeaders=host&X-Amz-Signature=38cd35123c1aace45bf8d56588542cf2e1b26034d093dd0d309b0cb9ebff73ba"
         }
         // 表格列
         const columns = [
