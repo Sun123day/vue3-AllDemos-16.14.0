@@ -48,6 +48,11 @@ const routes = [
     component: () => import('../views/chess02/index.vue')
   },
   {
+    path: '/liuyang',
+    name: 'liuyang',
+    component: () => import('../views/liuyang/index.vue')
+  },
+  {
     path: '/naiveTree01',
     name: 'naiveTree01',
     component: () => import('../views/naiveTree01/index.vue')

@@ -11,6 +11,9 @@ animation="300"            //动画效果
 @start="onStart"           //拖拽开始的事件
 @end="onEnd"               //拖拽结束的事件
 */
+
+// reactive方法
+// 注意：reactive方法返回的是一个响应式对象，不需要使用.value来访问值
 const state = reactive({
   //需要拖拽的数据，拖拽后数据的顺序也会变化
   list: [
@@ -23,6 +26,8 @@ const state = reactive({
   ],
 });
 
+// ref方法
+// 注意：ref方法返回的是一个对象，需要使用.value来访问值
 const list = ref([
     { name: "卡片1", id: '01' },
     { name: "卡片2", id: '02' },
@@ -62,6 +67,7 @@ const handleRemove = (item) => {
     <div class="itxst">
       <!-- drag不生效 -->
       <div class="drag">
+        <!-- :list="state.list" -->
         <draggable
           :list="list"
           animation="300"
@@ -100,7 +106,8 @@ const handleRemove = (item) => {
   height: 100vh;
 }
 .itxst {
-  width: 600px;
+  // width: 600px;
+  width: 800px;
   display: flex;
 }
 .itxst > div:nth-of-type(1) {
