@@ -87,6 +87,11 @@ const routes = [
     name: 'tuozhuaiCard拖拽卡片',
     component: () => import('../views/tuozhuaiCard/index.vue')
   },
+  {
+    path: '/todoList',
+    name: '庆森写的todoList待办列表',
+    component: () => import('../views/qingsentodo/index.vue')
+  },
 ]
 
 const router = createRouter({
