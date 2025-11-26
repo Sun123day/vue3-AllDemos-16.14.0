@@ -23,15 +23,16 @@
 import draggable from 'vuedraggable'
 import { ref } from 'vue'
 const list = ref([
-        { name: "John", id: 0 },
-        { name: "Joao", id: 1 },
-        { name: "Jean", id: 2 }
+        { name: "1==>John", id: 1 },
+        { name: "2==>Joao", id: 2 },
+        { name: "3==>Jean", id: 3 }
       ])
 const onStart = () => {
 
 }
 const onEnd = () => {
-
+  // 拖拽完成后的结果可以在这里进行显示和操作
+  console.log("🚀 ~ draggable.vue:34 ~ list:", list.value)
 }
 </script>
 
